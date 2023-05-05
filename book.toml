@@ -1,0 +1,7 @@
+[book]
+authors = ["QAQ"]
+language = "en"
+create-missing = true
+multilingual = false
+src = "src"
+title = "r4l"
