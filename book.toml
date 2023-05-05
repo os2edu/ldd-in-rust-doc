@@ -1,7 +1,10 @@
 [book]
-authors = ["QAQ"]
+authors = [""]
 language = "en"
 create-missing = true
 multilingual = false
 src = "src"
-title = "r4l"
+title = "ldd-in-rust-doc"
+
+[output.html]
+site-url = "/ldd-in-rust-doc/"
