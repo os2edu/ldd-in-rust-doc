@@ -25,7 +25,7 @@ ArceOS GitHub 网址：<https://github.com/rcore-os/arceos>
       ![result](assert/task1.3.png)
 
 3. 运行
-   1. Hello World：(默认ARCH = riscv64)
+   1. Hello World：(默认ARCH = x86_64)
 
         ```shell
         make justrun

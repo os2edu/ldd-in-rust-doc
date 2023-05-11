@@ -19,10 +19,10 @@
     sudo apt-get install libpixman-1-dev
     ```
 
-3. 将Qemu加入路径
+3. 将Qemu目录下build目录加入进`PATH`环境变量
 
     ```shell
-    export PATH=(your path):$PATH
+    export PATH=(your path/qemu/build):$PATH
     ```
 
 4. 设置Qemu编译生成的目标为RISC-V，AArch64，X86
