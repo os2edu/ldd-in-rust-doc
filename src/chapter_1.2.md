@@ -15,7 +15,7 @@ ArceOS GitHub 网址：<https://github.com/rcore-os/arceos>
         cargo install cargo-binutils
         ```
 
-     2. 编译:（默认ARCH = riscv64）
+     2. 编译:（默认ARCH = x86_64）
 
         ```shell
         # arceos目录下
