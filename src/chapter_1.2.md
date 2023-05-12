@@ -22,7 +22,7 @@ ArceOS GitHub 网址：<https://github.com/rcore-os/arceos>
         make
         ```
 
-      ![result](assert/task1.3.png)
+      ![result](assert/task1.2.1.png)
 
 3. 运行
    1. Hello World：(默认ARCH = x86_64)
@@ -44,5 +44,5 @@ ArceOS GitHub 网址：<https://github.com/rcore-os/arceos>
         make A=apps/helloworld ARCH=aarch64 LOG=info NET=N SMP=4 run
         ```
 
-        ![result](assert/task1.4.png)
+        ![result](assert/task1.2.2.png)
         详见：<https://github.com/rcore-os/arceos#example-apps-1>

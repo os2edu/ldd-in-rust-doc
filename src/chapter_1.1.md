@@ -37,7 +37,7 @@
       ./configure --target-list=aarch64-softmmu,riscv64-softmmu,x86_64-softmmu
       ```
 
-      ![result](assert/task1.2.png)
+      ![result](assert/task1.1.1.png)
 
     - 其他可生成的目标：
 
@@ -51,7 +51,7 @@
 make
 ```
 
-![result](assert/task1.2.png)
+![result](assert/task1.1.2.png)
 
 - Qemu for RISC-V
 - Qemu for AArch64
