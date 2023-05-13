@@ -1,13 +1,15 @@
-# 任务四：ArceOS + 网卡驱动 in Qemu for AArch64 验证
+# 任务四：ArceOS + 网卡驱动 in Qemu for AArch64/RISC-V 验证
 
 1.  配置
-    在qemu目录下
+    
 
       ```shell
+      # qemu目录下
       sudo apt-get install libslirp-dev
       sudo apt install flex
       sudo apt install bison
-      ./configure --target-list=aarch64-softmmu --enable-slirp
+      ./configure --target-list=aarch64-softmmu --enable-slirp    //AArch64
+      ./configure --target-list=riscv64-softmmu --enable-slirp    //RISC-V
       ```
 
  ![picture](assert/task1.4.1.png)
@@ -21,14 +23,10 @@
 ![picture](assert/task1.4.2.png)
 
 3.  运行
-    返回arceos目录下
 
       ```shell
+      # arceos目录下
       make A=apps/net/httpserver ARCH=aarch64 LOG=info NET=y SMP=4 run
-      
-      rust-objcopy --binary-architecture=aarch64 apps/net/httpserver/httpserver_qemu-virt-aarch64.elf --strip-all -O binary apps/net/httpserver/httpserver_qemu-virt-aarch64.bin
-
-      qemu-system-aarch64 -m 128M -smp 4 -cpu cortex-a72 -machine virt -kernel apps/net/httpserver/httpserver_qemu-virt-aarch64.bin -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic
       ```
     
 ![picture](assert/task1.4.3.png)
