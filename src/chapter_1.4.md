@@ -26,7 +26,8 @@
 
       ```shell
       # arceos目录下
-      make A=apps/net/httpserver ARCH=aarch64 LOG=info NET=y SMP=4 run
+      make A=apps/net/httpserver ARCH=aarch64 LOG=info NET=y SMP=4 run  // AArch64
+      make A=apps/net/httpserver ARCH=riscv64 LOG=info NET=y SMP=4 run  // RISC-V
       ```
     
 ![picture](assert/task1.4.3.png)
