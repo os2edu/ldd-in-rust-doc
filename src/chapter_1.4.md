@@ -36,7 +36,7 @@
 
 ![picture](assert/task1.4.4.png)
 
-复制到浏览器中访问，或者访问localhost:(端口号)，得到:
+访问localhost:(端口号)，得到:
 
 ![picture](assert/task1.4.5.png)
 
