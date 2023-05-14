@@ -2,7 +2,7 @@
 
 ArceOS GitHub 网址：<https://github.com/rcore-os/arceos>
 
-1. 下载
+1. 克隆仓库
 
     ```shell
     git clone https://github.com/rcore-os/arceos.git
