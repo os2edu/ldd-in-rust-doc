@@ -7,7 +7,7 @@
     git clone https://github.com/raspberrypi/linux.git
     ```
 
-    依据 https://github.com/raspberrypi/linux/blob/rpi-6.1.y/Documentation/process/changes.rst 安装或更新所需的软件
+    依据 <https://github.com/raspberrypi/linux/blob/rpi-6.1.y/Documentation/process/changes.rst> 安装或更新所需的软件
 
 2.  安装交叉编译所需的依赖:
     
@@ -30,7 +30,7 @@
     make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcmrpi3_defconfig
     ```
 
-    编译配置的默认参数bcmrpi3_defconfig文件可以参考 https://github.com/raspberrypi/linux/blob/rpi-6.1.y/arch/arm64/configs/bcmrpi3_defconfig
+    编译配置的默认参数bcmrpi3_defconfig文件可以参考 <https://github.com/raspberrypi/linux/blob/rpi-6.1.y/arch/arm64/configs/bcmrpi3_defconfig>
 
 5.  编译
     
