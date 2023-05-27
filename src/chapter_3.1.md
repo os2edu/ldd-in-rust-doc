@@ -1,10 +1,10 @@
-# 任务零：环境搭建 C语言内核模块的编译和测试
+# 任务零：环境搭建 C 语言内核模块的编译和测试
 
 参考唐洪雨的[最简驱动体验](https://thy1037.github.io/r4l-doc/c_01.html)。
 
 ## 环境搭建
 
-### Docker安装
+### Docker 安装
 
 为了统一开发环境，同时于其它开发环境做隔离，选择在 Docker 中做开发。
 
@@ -68,7 +68,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 oslab@oslab-virtual-machine:~$ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-### 安装Docker Engine
+### 安装 Docker Engine
 
 更新 apt 包索引：
 
@@ -92,7 +92,7 @@ sudo docker run hello-world
 
 ![picture](assert/task3.0.1.png)
 
-### Docter配置
+### Docter 配置
 
 #### Qemu
 
@@ -130,7 +130,7 @@ apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 
 
 解压后将 gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabihf/bin 添加进环境变量，便于后续使用。
 
-## C驱动开发
+## C 驱动开发
 
 首先编写模块的必要代码
 
@@ -163,7 +163,7 @@ MODULE_ALIAS("test_module");
 
 - module_init(hello_init) 用来指定模块的初始化函数，在 insmod 时被调用
 - module_init(hello_exit) 用来指定模块的初始化函数，在 rmmod 时被调用
-- MODULE_* 用来指定模块的相关信息，在 modinfo 时被调用
+- MODULE\_\* 用来指定模块的相关信息，在 modinfo 时被调用
 
 ### 编译
 
@@ -196,7 +196,7 @@ clean:
 启动虚拟机，加载模块：
 
 ```
-/ # insmod hellomodule.ko 
+/ # insmod hellomodule.ko
 hellomodule: loading out-of-tree module taints kernel.
 hellomodule: module license 'GPL2' taints kernel.
 Disabling lock debugging due to kernel taint
@@ -207,7 +207,7 @@ Disabling lock debugging due to kernel taint
 卸载模块：
 
 ```
-/ # rmmod hellomodule.ko 
+/ # rmmod hellomodule.ko
 [ default ] Hello Module Exit
 ```
 
@@ -216,12 +216,12 @@ Disabling lock debugging due to kernel taint
 查看模块信息：
 
 ```
-/ # modinfo hellomodule.ko 
+/ # modinfo hellomodule.ko
 filename:       hellomodule.ko
 author:         THY
 description:    hello module
 license:        GPL2
 alias:          test_module
-depends:        
-vermagic:       6.1.21 SMP mod_unload ARMv7 p2v8 
+depends:
+vermagic:       6.1.21 SMP mod_unload ARMv7 p2v8
 ```

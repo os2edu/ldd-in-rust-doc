@@ -1,21 +1,21 @@
 # 任务二：Linux 6.1 在 Qemu for x86/AArch64 中运行
 
-**Qemu模拟器硬件支持**
+**Qemu 模拟器硬件支持**
 
-Qemu模拟器支持的virt machine包含的模拟硬件(串口模拟用One PL011 UART)
+Qemu 模拟器支持的 virt machine 包含的模拟硬件(串口模拟用 One PL011 UART)
 <https://www.qemu.org/docs/master/system/arm/virt.html>
 
 Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
 <https://www.qemu.org/docs/master/system/arm/raspi.html>
 <https://www.qemu.org/docs/master/system/arm/raspi.html#implemented-devices>
 
-树莓派3B+的串口使用(有两个内建串口，一个是PL011 Uart，一个是Mini Uart)
+树莓派 3B+的串口使用(有两个内建串口，一个是 PL011 Uart，一个是 Mini Uart)
 <https://zhuanlan.zhihu.com/p/497002318>
 
-使用busybox制作内存文件系统initramfs：
+使用 busybox 制作内存文件系统 initramfs：
 
-1.  下载解压busybox并配置环境变量
-    
+1.  下载解压 busybox 并配置环境变量
+
     ```shell
     wget https://busybox.net/downloads/busybox-1.35.0.tar.bz2
     tar -xf busybox-1.35.0.tar.bz2
@@ -26,7 +26,7 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     ```
 
 2.  配置编译内核的参数
-   
+
     ```shell
     # busybox-1.35.0目录下
     make menuconfig
@@ -42,7 +42,7 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     ![picture](assert/task2.2.1.png)
 
 3.  编译
-    
+
     ```shell
     make -j `nproc`
     ```
@@ -61,7 +61,7 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
 
 4.  安装
 
-    安装前busybox-1.35.0目录下的文件如下图所示
+    安装前 busybox-1.35.0 目录下的文件如下图所示
 
     ![picture](assert/task2.2.2.png)
 
@@ -70,15 +70,15 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     ```shell
     make install
     ```
-    
-    编译后busybox-1.35.0目录下的文件如下图所示
+
+    编译后 busybox-1.35.0 目录下的文件如下图所示
 
     ![picture](assert/task2.2.3.png)
 
-    安装后目录下生成了_install目录
+    安装后目录下生成了\_install 目录
 
-5.  在_install目录下创建后续所需的文件和目录
-    
+5.  在\_install 目录下创建后续所需的文件和目录
+
     ```shell
     cd _install
     mkdir proc sys dev tmp
@@ -86,8 +86,8 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     chmod +x init
     ```
 
-6.  用任意的文本编辑器编辑init文件内容如下
-    
+6.  用任意的文本编辑器编辑 init 文件内容如下
+
     ```shell
     #!/bin/sh
 
@@ -107,22 +107,23 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     # 停留在控制台
     exec /bin/sh
     ```
-7.  用busybox制作initramfs文件
-    
+
+7.  用 busybox 制作 initramfs 文件
+
     ```shell
     # _install目录
     find . -print0 | cpio --null -ov --format=newc | gzip -9 > ../initramfs.cpio.gz
     ```
 
-    执行成功后可在busybox-1.35.0目录下找到initramfs.cpio.gz文件
+    执行成功后可在 busybox-1.35.0 目录下找到 initramfs.cpio.gz 文件
 
-8.  进入qemu目录下，执行如下命令
-    
+8.  进入 qemu 目录下，执行如下命令
+
     ```shell
     qemu-system-aarch64 -M virt -cpu cortex-a72 -smp 8 -m 128M -kernel (your Image path) -initrd (your initramfs.cpio.gz path) -nographic -append "init=/init console=ttyAMA0"
     ```
 
-    其中`(your Image path)`为上一个任务中最后的`Image`镜像文件所在的目录，`(your initramfs.cpio.gz)`为步骤7中执行成功后得到的initramfs.cpio.gz的目录，例如
+    其中`(your Image path)`为上一个任务中最后的`Image`镜像文件所在的目录，`(your initramfs.cpio.gz)`为步骤 7 中执行成功后得到的 initramfs.cpio.gz 的目录，例如
 
     ```shell
     qemu-system-aarch64 -M virt -cpu cortex-a72 -smp 8 -m 128M -kernel /home/jun/maodou/linux/arch/arm64/boot/Image -initrd /home/jun/maodou/busybox-1.35.0/initramfs.cpio.gz -nographic -append "init=/init console=ttyAMA0"
@@ -130,7 +131,7 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
 
     可使用相对路径
 
-    其中，qemu启动参数的意义如下：
+    其中，qemu 启动参数的意义如下：
 
     ```shell
     -M：指定模拟的开发板，可通过qemu-system-aarch64 M help查看
@@ -330,10 +331,10 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     / #
     ```
 
-9.  在启动的linux内核中的终端输入`ls`命令查看当前目录下文件列表，如下图所示
+9.  在启动的 linux 内核中的终端输入`ls`命令查看当前目录下文件列表，如下图所示
 
     ![picture](assert/task2.2.4.png)
 
-    可以看到文件列表与_install目录下的文件保持一致
+    可以看到文件列表与\_install 目录下的文件保持一致
 
-参考资料：[QEMU启动ARM64 Linux内核_linux 启动qemu_许振坪的博客-CSDN博客](https://blog.csdn.net/benkaoya/article/details/129509269)
+参考资料：[QEMU 启动 ARM64 Linux 内核*linux 启动 qemu*许振坪的博客-CSDN 博客](https://blog.csdn.net/benkaoya/article/details/129509269)

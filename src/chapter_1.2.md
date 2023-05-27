@@ -5,45 +5,48 @@ ArceOS 介绍 PPT：<https://learningos.github.io/os-lectures/oslabs/biglabs.htm
 
 1. 克隆仓库
 
-    ```shell
-    git clone https://github.com/rcore-os/arceos.git
-    ```
+   ```shell
+   git clone https://github.com/rcore-os/arceos.git
+   ```
 
 2. 编译
-     1. 安装依赖：
 
-        ```shell
-        cargo install cargo-binutils
-        ```
+   1. 安装依赖：
 
-     2. 编译:（默认ARCH = x86_64）
+      ```shell
+      cargo install cargo-binutils
+      ```
 
-        ```shell
-        # arceos目录下
-        make
-        ```
+   2. 编译:（默认 ARCH = x86_64）
 
-      ![result](assert/task1.2.1.png)
+      ```shell
+      # arceos目录下
+      make
+      ```
+
+   ![result](assert/task1.2.1.png)
 
 3. 运行
-   1. Hello World：(默认ARCH = x86_64)
 
-        ```shell
-        make justrun
-        ```
+   1. Hello World：(默认 ARCH = x86_64)
 
-   2. 运行特定APP:
-    - 模板：
+      ```shell
+      make justrun
+      ```
 
-        ```shell
-        make A=path/to/app ARCH=<arch> LOG=<log> NET=[y|n] FS=[y|n]
-        ```
+   2. 运行特定 APP:
 
-    - 例：
+   - 模板：
 
-        ```shell
-        make A=apps/helloworld ARCH=aarch64 LOG=info NET=N SMP=4 run
-        ```
+     ```shell
+     make A=path/to/app ARCH=<arch> LOG=<log> NET=[y|n] FS=[y|n]
+     ```
 
-        ![result](assert/task1.2.2.png)
-        详见：<https://github.com/rcore-os/arceos#example-apps-1>
+   - 例：
+
+     ```shell
+     make A=apps/helloworld ARCH=aarch64 LOG=info NET=N SMP=4 run
+     ```
+
+     ![result](assert/task1.2.2.png)
+     详见：<https://github.com/rcore-os/arceos#example-apps-1>

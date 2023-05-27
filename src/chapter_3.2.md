@@ -4,11 +4,11 @@
 - 肖络元代码： <https://github.com/rcore-os/e1000-driver> <https://github.com/elliott10/e1000-driver/tree/dev/src>
 - 陈乐代码： <https://github.com/rcore-os/nvme_driver>
 
-## linux内核下载
+## linux 内核下载
 
 代码地址： <https://github.com/os2edu/rust-for-linux-6.1> （目前驱动可以在这个内核运行）
 
-下载、解压后进入，查看 Documentation/rust/quick-start.rst 可以看到开启内核里Rust支持的一些先决条件
+下载、解压后进入，查看 Documentation/rust/quick-start.rst 可以看到开启内核里 Rust 支持的一些先决条件
 
 ```shell
 # 1. 指定 rustc 版本：
@@ -31,7 +31,7 @@ make LLVM=1 rustavailable
 ## 内核配置
 
 ```shell
-# 1. 选择基本环境，当前版本内核支持的并不宽泛，x86_64 和 arm64（aarch64）的限制少： 
+# 1. 选择基本环境，当前版本内核支持的并不宽泛，x86_64 和 arm64（aarch64）的限制少：
 make x86_64_defconfig
 # 2.1 General setup ->
 #       [*] Rust support
@@ -51,7 +51,7 @@ make LLVM=1 menuconfig
 make LLVM=1
 ```
 
-为了保证顺利加载驱动模块需要将busybox重新编译与内核架构一致
+为了保证顺利加载驱动模块需要将 busybox 重新编译与内核架构一致
 
 进入 BusyBox 源代码所在的目录
 
@@ -70,7 +70,7 @@ make defconfig
 ```shell
 make menuconfig
 ```
- 
+
 在菜单界面中，找到以下选项：
 
 ```
@@ -94,15 +94,15 @@ make
 make install
 ```
 
-这将在 _install 子目录中创建一个包含 BusyBox 可执行文件和符号链接的文件系统。然后将 BusyBox 的二进制文件复制到适当的目录，以便在您的环境中使用。
+这将在 \_install 子目录中创建一个包含 BusyBox 可执行文件和符号链接的文件系统。然后将 BusyBox 的二进制文件复制到适当的目录，以便在您的环境中使用。
 
-## r4l e1000驱动模块下载
+## r4l e1000 驱动模块下载
 
 ```shell
 git clone https://github.com/myrfy001/r4l-e1000.git
 ```
 
-注意build_image脚本，需要根据你的电脑更改相应的路径。
+注意 build_image 脚本，需要根据你的电脑更改相应的路径。
 
 例如：
 
