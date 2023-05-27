@@ -1,6 +1,7 @@
 # 任务二：ArceOS 下载、编译和运行
 
 ArceOS GitHub 网址：<https://github.com/rcore-os/arceos>
+ArceOS 介绍 PPT：<https://learningos.github.io/os-lectures/oslabs/biglabs.html>
 
 1. 克隆仓库
 

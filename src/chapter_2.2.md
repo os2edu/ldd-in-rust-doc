@@ -12,6 +12,8 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
 树莓派3B+的串口使用(有两个内建串口，一个是PL011 Uart，一个是Mini Uart)
 <https://zhuanlan.zhihu.com/p/497002318>
 
+使用busybox制作内存文件系统initramfs：
+
 1.  下载解压busybox并配置环境变量
     
     ```shell
@@ -47,7 +49,7 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
 
     编译结束后出现如下提示可以忽略
 
-    ```shell
+    ```
     Trying libraries: m resolv rt
     Library m is needed, can't exclude it (yet)
     Library resolv is needed, can't exclude it (yet)
@@ -141,7 +143,7 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
     -nographic：启动字符界面（不启动图形界面），输出重定向到宿主机命令行，与参数 console=ttyAMA0 组合使用
     ```
 
-    运行结果如下图所示
+    运行结果如下所示
 
     ```shell
     [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd083]
@@ -334,4 +336,4 @@ Qemu 模拟器支持的 raspi3b machine 包含的模拟硬件
 
     可以看到文件列表与_install目录下的文件保持一致
 
-参考资料：<https://blog.csdn.net/benkaoya/article/details/129509269>
+参考资料：[QEMU启动ARM64 Linux内核_linux 启动qemu_许振坪的博客-CSDN博客](https://blog.csdn.net/benkaoya/article/details/129509269)

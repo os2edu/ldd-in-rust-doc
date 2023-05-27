@@ -1,7 +1,7 @@
-# 任务五：ArceOS + 网卡驱动 + UDP 发包应用程序 验证
+# 任务五：ArceOS + virtio-net 网卡驱动 + UDP 发包应用程序 验证
 
 吴大帅在ArceOS上做的UDP开发工作:
-1.  仓库: <https://github.com/reflyable/arceos-udp>
+1.  仓库: <https://github.com/reflyable/arceos-udp>（main 分支）
 2.  报告: <https://github.com/reflyable/arceos-udp/tree/report/report>
 
 ---

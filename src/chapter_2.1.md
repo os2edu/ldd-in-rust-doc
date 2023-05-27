@@ -7,7 +7,7 @@
     git clone https://github.com/raspberrypi/linux.git
     ```
 
-    依据 <https://github.com/raspberrypi/linux/blob/rpi-6.1.y/Documentation/process/changes.rst> 安装或更新所需的软件
+    依据 [linux/changes.rst at rpi-6.1.y · raspberrypi/linux (github.com)](https://github.com/raspberrypi/linux/blob/rpi-6.1.y/Documentation/process/changes.rst) 安装或更新所需的软件
 
 2.  安装交叉编译所需的依赖:
     
@@ -38,8 +38,14 @@
     make -j4 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
     ```
 
+    编译结束后应显示：
+
+    ![picture](assert/task2.1.1.png)
+
 6.  查看镜像位置
     
+    ![picture](assert/task2.1.2.png)
+
     上一步编译结束后，输入如下命令
 
     ```shell
@@ -48,3 +54,5 @@
     ```
 
     可以看到对应目录下出现了`Image`镜像文件
+
+    参考：[15分钟教你搞懂树莓派的Linux内核编译 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/535947815)。

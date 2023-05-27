@@ -1,4 +1,6 @@
-# Chapter 1
+# 第一阶段：ArceOS in Qemu 验证（4.24-5.1）
+
+## 任务零：Ubuntu 22.04 开发环境搭建
 
 1. 在Windows上安装WSL
    - 参考链接：<https://learn.microsoft.com/zh-cn/windows/wsl/install#troubleshooting-installation>
@@ -46,7 +48,7 @@
       export PATH=~/.cargo/bin:$PATH
       ```
 
-   - 按Esc键退出编辑模式，按 : 键并输入wq，保存并推出。
+   - 按Esc键退出编辑模式，按 : 键并输入wq，保存并退出。
    - 加载修改后的配置：
 
       ```shell

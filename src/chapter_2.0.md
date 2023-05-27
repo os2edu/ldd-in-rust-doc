@@ -1,6 +1,6 @@
 # 第二阶段：Linux 6.1 in Qemu 验证（5.8-5.20）
 
-此阶段重点放在Linux 6.1内核的编译，不需要引入rust4linux，尽量配置为AArch64
+此阶段重点放在Linux 6.1内核的编译，不需要引入rust4linux，尽量配置为AArch64。
 
 Qemu支持的树莓派板子: <https://www.qemu.org/docs/master/system/arm/raspi.html>
 
