@@ -36,12 +36,11 @@ qemu_opts += \
 ```
 
 参考：[Documentation/Networking - QEMU](https://wiki.qemu.org/Documentation/Networking)
-
-- 重新执行
+- 编译内核
 
   ```shell
   make clean
-  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- bcmrpi3_defconfig
+  make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
   make -j4  ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- Image modules dtbs
   ```
 
